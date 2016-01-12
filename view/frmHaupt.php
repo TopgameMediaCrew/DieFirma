@@ -25,7 +25,7 @@
       <ul>
          <li><a href='#'><span>Anzeigen</span></a></li>
          <li><a href='#'><span>Bearbeiten</span></a></li>
-         <li class='last'><a href='#'><span>Test2</span></a></li>
+         <li class='last'><a href='#'><span>Ausleihe</span></a></li>
       </ul>
    </li>
    <li class='has-sub'><a href='#'><span>Projekte</span></a>

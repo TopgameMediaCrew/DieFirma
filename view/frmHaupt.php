@@ -18,7 +18,8 @@
    <li class='has-sub'><a href='#'><span>Abteilungen</span></a>
       <ul>
          <li><a href='#'><span>Test1</span></a></li>
-         <li class='last'><a href='#'><span>Test2</span></a></li>
+         <li><a href='#'><span>Test2</span></a></li>
+         <li class='last'><a href='#'><span>Test3</span></a></li>
       </ul>
    </li>
    <li class='has-sub'><a href='#'><span>Fuhrpark</span></a>

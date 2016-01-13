@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     $("button").click(function () {
-//        alert(this.value);
+        alert(this.value);
 //        alert(this.id);
 
         $.post("index.php",
@@ -15,15 +15,26 @@ $(document).ready(function () {
                 });
     });
 
+
+    $('a.menuItem').click(function (e) {
+        alert(this.id);
+    });
+    
+
     $('#cssmenu > ul > li > a').click(function () {
+        
+        alert(this.id);
+
         $('#cssmenu li').removeClass('active');
         $(this).closest('li').addClass('active');
         var checkElement = $(this).next();
         if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+//            alert(this.id);
             $(this).closest('li').removeClass('active');
             checkElement.slideUp('normal');
         }
         if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+//            alert(this.id);
             $('#cssmenu ul ul:visible').slideUp('normal');
             checkElement.slideDown('normal');
         }

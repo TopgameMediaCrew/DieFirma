@@ -7,5 +7,7 @@
     if ($ajax == 'false') {
         include './view/frmHaupt.php';
     }
+    
+    
 
 ?>

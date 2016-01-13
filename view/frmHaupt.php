@@ -7,7 +7,7 @@
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='' id="Home"><span>Home</span></a></li>
-   <li class='has-sub'><a href='#' id="Mitarbeiter"><span>Mitarbeiter</span></a>
+   <li class='has-sub'><a href='' id="Mitarbeiter"><span>Mitarbeiter</span></a>
       <ul>
          <li><a class="menuItem" href='#' id="Anzeige"><span>Anzeigen</span></a></li>
          <li><a class="menuItem" href='#' id="Bearbeiten"><span>Bearbeiten</span></a></li>

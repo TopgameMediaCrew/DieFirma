@@ -1,24 +1,69 @@
 <?php
 
-class Mitarbeiter
+class Mitarbeiter implements Aenderbar
 {
     private $id;
     private $vorname;
     private $nachname;
     private $geschlecht;
-    private $abt_id;
+    private $geburtsdatum;
+    private $abteilung_id;
     private $stundenlohn;
-    private $v_id;
+    private $vorgesetzter_id;
     
-    function __construct($id, $vorname, $nachname, $geschlecht, $abt_id, $stundenlohn, $v_id) 
+    function __construct($vorname, $nachname, $geschlecht, $geburtsdatum, $abteilung_id, $stundenlohn, $vorgesetzter_id, $id = 0) 
     {
         $this->id = $id;
         $this->vorname = $vorname;
         $this->nachname = $nachname;
         $this->geschlecht = $geschlecht;
-        $this->abt_id = $abt_id;
+        $this->geburtsdatum = $geburtsdatum;
+        $this->abteiulng_id = $abteilung_id;
         $this->stundenlohn = $stundenlohn;
-        $this->v_id = $v_id;
+        $this->v_id = $vorgesetzter_id;
+    }
+    
+    public static function delete($id) 
+    {
+        $stmt = $db->prepare("DELETE * FROM mitarbeiter WHERE id=:id");
+        $stmt->execute([':id' => $id]);
+        
+        return "Der Mitarbeiter wurde gelöscht";
+    }
+
+    public static function getById($id) 
+    {
+        $stmt = $db->prepare("SELECT * FROM mitarbeiter WHERE id=:id");
+        $stmt->execute([':id' => $id]);
+        $mitarbeiter = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        return $mitarbeiter;
+    }
+
+    public static function insert($m)
+    {
+        $stmt = $db->prepare("INSERT INTO mitarbeiter(id, vorname, nachname, geschlecht, geburtsdatum, abteilung_id, stundenlohn, vorgesetzter_id) VALUES(:id, :vorname, :nachname, :geschlecht, :geburtsdatum, :abteilung_id, :stundenlohn, :vorgesetzter_id)");
+        if($stmt->execute([':id' => $m->getId(), ':vorname' => $m->getVorname(), ':nachname' => $m->getNachname(), ':geschlecht' => $m->getGeschlecht(), ':geburtsdatum' => $m->getGeburtsdatum(), ':abtelung_id' => $m->getAbteilung_id(), ':stundenlohn' => $m->getStundenlohn(), ':vorgesetzter_id' => $m->getVorgesetzter_id()]))
+        {
+            echo "Der neue Mitarbeiter wurde hinzugefügt.";
+        }
+    }
+
+    public static function update($object) 
+    {
+        $stmt = $db->prepare("UPDATE mitarbeiter SET vorname=:vorname, nachname=:nachname, geschlecht=:geschlecht, geburtsdatum=:geburtsdatum, abteilung_id=:abteilung_id, stundenlohn=:stundenlohn, vorgesetzter_id=:vorgesetzter_id WHERE id=:id");
+        if($stmt->execute([':id' => $object->getId(), ':vorname' => $object->getVorname(), ':nachname' => $object->getNachname(), ':geschlecht' => $object->getGeschlecht(), ':geburtsdatum' => $object->getGeburtsdatum(), ':abtelung_id' => $object->getAbteilung_id(), ':stundenlohn' => $object->getStundenlohn(), ':vorgesetzter_id' => $object->getVorgesetzter_id()]))
+        {
+            echo "Die Daten wurden geändert.";
+        }
+    }
+    
+    public static function getAll()
+    {
+        $stmt = $db->query("SELECT * FROM mitarbeiter");
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $result;
     }
     
     function getId() 
@@ -41,23 +86,24 @@ class Mitarbeiter
         return $this->geschlecht;
     }
 
-    function getAbteilung() 
+    function getGeburtsdatum() 
     {
-        $stmt = $db->prepare("SELECT name FROM abteilung WHERE id=:id");
-        $stmt->execute([':id' => $this->abt_id]);
-        $abteilung = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        return $abteilung['name'];
+        return $this->geburtsdatum;
+    }
+
+    function getAbteilung_id() 
+    {
+        return $this->abteilung_id;
     }
 
     function getStundenlohn() 
     {
-        return $this->monatslohn;
+        return $this->stundenlohn;
     }
 
-    function getV_Id() 
+    function getVorgesetzter_id() 
     {
-        return $this->v_id;
+        return $this->vorgesetzter_id;
     }
 
     function setId($id) 
@@ -80,9 +126,14 @@ class Mitarbeiter
         $this->geschlecht = $geschlecht;
     }
 
-    function setAbt_Id($abt_id) 
+    function setGeburtsdatum($geburtsdatum) 
     {
-        $this->abt_id = $abt_id;
+        $this->geburtsdatum = $geburtsdatum;
+    }
+
+    function setAbteilung_id($abteilung_id) 
+    {
+        $this->abteilung_id = $abteilung_id;
     }
 
     function setStundenlohn($stundenlohn) 
@@ -90,42 +141,12 @@ class Mitarbeiter
         $this->stundenlohn = $stundenlohn;
     }
 
-    function setV_Id($v_id) 
+    function setVorgesetzter_id($vorgesetzter_id) 
     {
-        $this->v_id = $v_id;
+        $this->vorgesetzter_id = $vorgesetzter_id;
     }
 
-    function istVorgesetzte()
-    {
-        $stmt = $db->prepare("SELECT id FROM mitarbeiter WHERE v_id=:id");
-        $stmt->execute([':id' => $this->v_id]);
-        $untergebene = $stmt->fetchAll(PDO::FETCH_NUM);
-        
-        if ($untergebene == 0) 
-        {
-            return false;
-        } 
-        else
-        {
-            return true;
-        }
-    }
-    
-    function getVorgesetzte()
-    {
-        $stmt = $db->prepare("SELECT vorname, nachname FROM mitarbeiter WHERE id=:id");
-        $stmt->execute([':id' => $this->v_id]);
-        $vorgesetzte = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        if($vorgesetzte['vorname'] && $vorgesetzte['nachname'])
-        {
-            return $vorgesetzte['vorname'].' '.$vorgesetzte['nachname'];
-        }
-        else
-        {
-            return "Keiner";
-        }
-    }
+
 
 }
 

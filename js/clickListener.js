@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     $("button").click(function () {
-        alert(this.value);
+//        alert(this.value);
 //        alert(this.id);
 
         $.post("index.php",
@@ -16,15 +16,22 @@ $(document).ready(function () {
     });
 
 
-    $('a.menuItem').click(function (e) {
+    $('a.menuItem').click(function () {
         alert(this.id);
+        $.post("index.php",
+                {
+                    ajax: "true",
+                    menuViewLoader: this.id,
+                },
+                function (data, status) {
+//                    alert(data);
+                    $('#frmTarget').html(data);
+                });
     });
     
 
-    $('#cssmenu > ul > li > a').click(function () {
-        
-        alert(this.id);
-
+    $('#cssmenu > ul > li > a').click(function () {       
+//        alert(this.id);
         $('#cssmenu li').removeClass('active');
         $(this).closest('li').addClass('active');
         var checkElement = $(this).next();

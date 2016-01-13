@@ -10,45 +10,33 @@ include './header.php';
     <table border="0">
 
         <tr>
-            <td>ID1</td>
-            <td>Vorname1</td>
-            <td>Nachname1</td>
+            <td>Hersteller</td>
+            <td>Modell</td>
+            <td>Kennzeichen</td>
             <td><input type="submit" value="bearbeiten" /></td>
             <td><input type="submit" value="löschen" /></td>
         </tr>
         <tr>
-            <td>ID1</td>
-            <td>Vorname2</td>
-            <td>Nachname2</td>
+            <td>Hersteller2</td>
+            <td>Modell2</td>
+            <td>Kennzeichen2</td>
             <td><input type="submit" value="bearbeiten" /></td>
             <td><input type="submit" value="löschen" /></td>
         </tr>
         <tr>
-            <td>ID1</td>
-            <td>Vorname3</td>
-            <td>Nachname3</td>
+            <td>Hersteller3</td>
+            <td>Modell3</td>
+            <td>Kennzeichen3</td>
             <td><input type="submit" value="bearbeiten" /></td>
             <td><input type="submit" value="löschen" /></td>
         </tr>
         <tr>
-            <td>ID1</td>
-            <td>Vorname4</td>
-            <td>Nachname4</td>
+            <td>Hersteller4</td>
+            <td>Modell4</td>
+            <td>Kennzeichen4</td>
             <td><input type="submit" value="bearbeiten" /></td>
             <td><input type="submit" value="löschen" /></td>
         </tr>
 
 
     </table>
-
-
-
-
-
-</div>
-
-
-<?php
-
-include './footer.php';
-?>

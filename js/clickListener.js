@@ -15,15 +15,33 @@ $(document).ready(function () {
                 });
     });
 
-    $('#cssmenu > ul > li > a').click(function () {
+
+    $('a.menuItem').click(function () {
+        alert(this.id);
+        $.post("index.php",
+                {
+                    ajax: "true",
+                    menuViewLoader: this.id,
+                },
+                function (data, status) {
+//                    alert(data);
+                    $('#frmTarget').html(data);
+                });
+    });
+    
+
+    $('#cssmenu > ul > li > a').click(function () {       
+//        alert(this.id);
         $('#cssmenu li').removeClass('active');
         $(this).closest('li').addClass('active');
         var checkElement = $(this).next();
         if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+//            alert(this.id);
             $(this).closest('li').removeClass('active');
             checkElement.slideUp('normal');
         }
         if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+//            alert(this.id);
             $('#cssmenu ul ul:visible').slideUp('normal');
             checkElement.slideDown('normal');
         }

@@ -9,24 +9,24 @@
    <li class='active'><a href='' id="Home"><span>Home</span></a></li>
    <li class='has-sub'><a href='#' id="Mitarbeiter"><span>Mitarbeiter</span></a>
       <ul>
-         <li><a class="menuItem" href='#' id="Anzeige"><span>Anzeigen</span></a></li>
-         <li><a class="menuItem" href='#' id="Bearbeiten"><span>Bearbeiten</span></a></li>
-         <li><a class="menuItem" href='#' id="neuAnlegen"><span>neu Anlegen</span></a></li>
-         <li class='last'><a class="menuItem" id="Suchen" href='#'><span>Suchen</span></a></li>
+         <li><a class="menuItem" href='#' id="MitarbeiterAnzeige"><span>Anzeigen</span></a></li>
+         <li><a class="menuItem" href='#' id="MitarbeiterBearbeiten"><span>Bearbeiten</span></a></li>
+         <li><a class="menuItem" href='#' id="MitarbeiterNeuAnlegen"><span>neu Anlegen</span></a></li>
+         <li class='last'><a class="menuItem" id="MitarbeiterSuchen" href='#'><span>Suchen</span></a></li>
       </ul>
    </li>
    <li class='has-sub'><a href='#' id="Abteilungen"><span>Abteilungen</span></a>
       <ul>
-         <li><a class="menuItem" href='#' id="Test1"><span>Test1</span></a></li>
-         <li><a class="menuItem" href='#' id="Test2"><span>Test2</span></a></li>
-         <li class='last'><a class="menuItem" href='#' id="Test3"><span>Test3</span></a></li>
+         <li><a class="menuItem" href='#' id="AbteilungAnzeigen"><span>Anzeigen</span></a></li>
+         <li><a class="menuItem" href='#' id="AbteilungBearbeiten"><span>Bearbeiten</span></a></li>
+         <li class='last'><a class="menuItem" href='#' id="AbteilungNeuAnlegen"><span>neu Anlegen</span></a></li>
       </ul>
    </li>
    <li class='has-sub'><a href='#' id="Fuhrpark"><span>Fuhrpark</span></a>
       <ul>
-         <li><a class="menuItem" href='#' id="Anzeigen"><span>Anzeigen</span></a></li>
-         <li><a class="menuItem" href='#' id="Bearbeiten"><span>Bearbeiten</span></a></li>
-         <li class='last'><a class="menuItem" href='#' id="Ausleihe"><span>Ausleihe</span></a></li>
+         <li><a class="menuItem" href='#' id="FuhrparkAnzeigen"><span>Anzeigen</span></a></li>
+         <li><a class="menuItem" href='#' id="FuhrparkBearbeiten"><span>Bearbeiten</span></a></li>
+         <li class='last'><a class="menuItem" href='#' id="FuhrparkAusleihe"><span>Ausleihe</span></a></li>
       </ul>
    </li>
    <li class='has-sub'><a href='#' id="Projekte"><span>Projekte</span></a>

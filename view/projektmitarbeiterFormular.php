@@ -14,8 +14,11 @@ include './header.php';
             </thead>
             <tbody>
                 <tr>
-                    <th>ID</th>
-                    <th><input type="text" name="ID" value="" /></th>
+                    <th>Projekt</th>
+                    <th><select name="Projekt">
+                            <option>Projekt 1</option>
+                            <option>Projekt 2</option>
+                        </select></th>
                 </tr>
                 <tr>
                     <th>von</th>

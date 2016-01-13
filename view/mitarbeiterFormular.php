@@ -35,11 +35,14 @@ include './header.php';
                 </tr>
                 <tr>
                     <th>Abteilung</th>
-                    <th><input type="text" name="Abteilung" value="" /></th>
+                    <th><select name="Abteilung">
+                            <option>Abteilung 1</option>
+                            <option>Abteilung 2</option>
+                        </select></th>
                 </tr>
                 <tr>
                     <th>Stundenlohn</th>
-                    <th><input type="number" name="Stundenlohn" value="" /></th>
+                    <th><input type="number" step=0.01 name="Stundenlohn" value="" /></th>
                 </tr>
                 <tr>
                     <th>Vorgesetzer</th>

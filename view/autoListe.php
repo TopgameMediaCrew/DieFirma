@@ -6,7 +6,7 @@ include './header.php';
 <script type="text/javascript" src="./js/clickListener.js"></script>
 
 <div id='cssmenu'>
-    <p id="titel">Mitarbeiter</p>
+    <p id="titel">Autoliste</p>
     <table border="0">
 
         <tr>

@@ -7,7 +7,7 @@ include './header.php';
 
 <div id='cssmenu'>
     <ul>
-        <li class='active'><a href='#'><span>Mitarbeiter</span></a></li>
+        <li class='active'><a href='#'><span>Auto</span></a></li>
         <table border="1">
             <thead>
 
@@ -15,7 +15,10 @@ include './header.php';
             <tbody>
                 <tr>
                     <th>Hersteller</th>
-                    <th><input type="text" name="Hersteller" value="" /></th>
+                    <th><select name="Hersteller">
+                            <option>Hersteller 1</option>
+                            <option>Hersteller 2</option>
+                        </select></th>
                 </tr>
                 <tr>
                     <th>Modell</th>

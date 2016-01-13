@@ -27,11 +27,11 @@ include './header.php';
                 </tr>
                 <tr>
                     <th>Geschlecht</th>
-                    <th>männlich<input type="radio" name="" value="m" />weiblich<input type="radio" name="" value="w" /></th>
+                    <th>männlich<input type="radio" name="sex" value="m" />weiblich<input type="radio" name="sex" value="w" /></th>
                 </tr>
                 <tr>
-                    <th>ID</th>
-                    <th><input type="text" name="ID" value="" /></th>
+                    <th>Geburtsdatum</th>
+                    <th><input type="date" name="Geburtsdatum" value="" /></th>
                 </tr>
                 <tr>
                     <th>Abteilung</th>
@@ -47,7 +47,7 @@ include './header.php';
                 </tr>
 
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" value="neu" /><input type="submit" value="suchen" /><input type="submit" value="bearbeiten" /></td>
+                    <td colspan="2" align="center"><input type="submit" value="OK" /></td>
                 </tr>
             </tbody>
         </table>
